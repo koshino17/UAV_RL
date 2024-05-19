@@ -28,7 +28,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # ===============================================================================
 
-from matplotlib import cm
+from matplotlib import pyplot
 from .. import Tango
 
 """
@@ -45,7 +45,7 @@ it gives back an empty default, when defaults are not defined.
 # Data plots:
 data_1d = dict(lw=1.5, marker="x", color="k")
 data_2d = dict(
-    s=35, edgecolors="none", linewidth=0.0, cmap=cm.get_cmap("hot"), alpha=0.5
+    s=35, edgecolors="none", linewidth=0.0, cmap=pyplot.get_cmap("hot"), alpha=0.5
 )
 inducing_1d = dict(lw=0, s=500, color=Tango.colorsHex["darkRed"])
 inducing_2d = dict(
