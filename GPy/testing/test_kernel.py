@@ -544,6 +544,7 @@ class TestKernelGradientContinuous:
         assert check_kernel_gradient_functions(k, X=self.X, X2=self.X2, verbose=verbose)
 
     def test_OU(self):
+        self.setup()
         k = GPy.kern.OU(self.D - 1, ARD=True)
         k.randomize()
         assert check_kernel_gradient_functions(k, X=self.X, X2=self.X2, verbose=verbose)

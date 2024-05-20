@@ -2,6 +2,8 @@
 
 ## Unreleased
 
++ update import in `.plotting.matplot_dep.defaults` due to change in matplotlib
+
 ## v1.13.1 (2024-01-14)
 
 * limit `scipy<1.12` as macos and linux jobs install some pre-release version of `scipy==1.12` which breaks tests
