@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-+ update import in `.plotting.matplot_dep.defaults` due to change in matplotlib
+* update import in `.plotting.matplot_dep.defaults` due to change in matplotlib
+
+* Correct dl_dm term in student t inference #1065
 
 ## v1.13.1 (2024-01-14)
 
