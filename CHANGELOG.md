@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-* remove python2-style print statements (#1056)
-
 * update import in `.plotting.matplot_dep.defaults` due to change in matplotlib
 
 * Correct dl_dm term in student t inference #1065
