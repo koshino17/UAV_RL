@@ -37,6 +37,7 @@ from plotly.graph_objs import Scatter, Scatter3d, Line,\
     Marker, ErrorX, ErrorY, Bar, Heatmap, Trace,\
     Annotations, Annotation, Contour, Font, Surface
 from plotly.exceptions import PlotlyDictKeyError
+import plotly.graph_objects as go
 
 SYMBOL_MAP = {
     'o': 'circle-dot',
@@ -327,10 +328,18 @@ class PlotlyPlotsOnline(PlotlyPlotsBase):
             # add mock data
             figure.append_trace(Scatter(x=[], y=[], name='', showlegend=False), 1, 1)
         from ..gpy_plot.plot_util import in_ipynb
-        if in_ipynb():
-            return plotly.plotly.iplot(figure, filename=filename, **kwargs)
+#         print(canvas)
+        #modify # Check if the canvas is already a Figure object.
+        if isinstance(canvas[0], go.Figure):
+            fig = canvas[0]
         else:
-            return plotly.plotly.plot(figure, filename=filename, **kwargs)#self.current_states[hex(id(figure))]['filename'])
+            fig_dict = canvas[0]
+#             fig = go.Figure(data=fig_dict.get("data"), layout=fig_dict.get("layout"))
+            fig = go.Figure(**fig_dict) #modify
+        if in_ipynb():
+            fig.show() #modify
+        else:
+            fig.show() #modify #self.current_states[hex(id(figure))]['filename'])
 
 class PlotlyPlotsOffline(PlotlyPlotsBase):
     def __init__(self):
